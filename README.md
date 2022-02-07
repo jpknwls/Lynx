@@ -26,15 +26,19 @@ The app follows a standard authorization shape, with a Root Component that provi
 Landing page
 
 - /login/
+
 Handles login
 
 - /register/
+
 Handles registration
 
 - /profile/
+
 Provides user the ability to edit add, remove and reorder their ***Lynx***
 
 - /{username}/
+
 Displays a user’s ***Lynx*** in a list.
 
 #### Login Screen
