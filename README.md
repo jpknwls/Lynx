@@ -1,6 +1,6 @@
 # Lynx
 
-![photo of the home screen](https://github.com/jpknwls/Lynx/blob/main/lynx-home.png?raw=true)
+![photo of the home screen](https://github.com/jpknwls/Lynx/blob/main/include/lynx-home.png?raw=true)
 
 
 ## Purpose
