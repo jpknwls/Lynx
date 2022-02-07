@@ -1,0 +1,240 @@
+base doc
+
+    routes
+        /
+        /login
+        /register
+        /profile
+        /{username}
+
+    models
+        user
+            name: string
+
+            links: string (comma separated)
+
+                save:
+                    linksArray.join(",")
+                load
+                    links.split(",") -> linksArray
+
+
+        DJANGO
+
+            ViewSet is a concept developed by DRF which consists of grouping a set of views for a given model in a single Python class. This set of views corresponds to the predefined actions of CRUD type (Create, Read, Update, Delete), associated with HTTP methods. Each of these actions is a ViewSet instance method. Among these default actions, we find:
+
+                    list
+                    retrieve
+                    update
+                    destroy
+                    partial_update
+                    create
+
+
+    react-app
+        .env : environment variables
+        craco.config.js 
+        tailwind.config.js
+        tsconfig.js
+        src/
+            pages/
+            store/
+                slices/
+                    auth
+
+            types
+            App
+
+
+        Redux is a library to manage the global state in our application.
+
+            a slice is a collection of reducer logic and actions for a single feature of our app.
+
+
+
+
+1. create the root project
+2. create the core app
+3. create the user app (UserConfig)
+4. (update settings)
+
+5. create user model
+6. create user serializer
+7. create user viewset
+
+8. create auth serializer
+9. create auth viewset
+
+10. create router
+
+
+11. test user
+curl -X POST -F 'username=test' -F 'email=linuxize@example.com' -F 'password=12345678' localhost:8000/api/auth/register/
+
+12. enable cors
+13. create react app
+14. install tailwind
+
+15. create login and register pages
+16. create redux store
+17. define API response interfaces
+18. define slices for different actions
+19. define root store
+20. wrap app in provider (store), persist gate
+21. create protected route to the home profile
+
+
+
+
+
+
+
+things
+    authentication flow
+        /login
+        /register
+
+    fetch user
+        /{ user}
+
+            //state to hold and update user
+            const [user, setUser] = useState({});
+
+            // ref to track...idk
+            const countRef = useRef(0);
+
+            // effect to async fetch
+            useEffect(() => {
+            retrieveUser();
+          }, [countRef]);
+
+           const retrieveUser = () => {
+
+                    axios
+                      .get(`${baseURL}/{user}/`, {
+                        headers: {
+                          headers,
+                        },
+                      })
+                      .then((response) => {
+                        // state update
+                        setUser(response.data)
+                      })
+                      .catch((e) => {
+                        console.error(e);
+          });
+
+
+
+
+
+
+
+    update profile
+        /profile
+     
+
+     const initialUserState = {
+        id: null,
+        created: new Date,
+        updated: new Date,
+        username: "",
+        email: "",
+        links: "",
+
+
+      };
+
+    // hold user, intialized with blank data
+    const [user, setUser] = useState(initialUserState);
+    
+    // track whether edits have been made
+     const [edited, setEdited] = useState(false);
+
+    // track whether edits have been saved
+    const [submitted, setSubmitted] = useState(false);
+
+
+    // idk why
+    const countRef = useRef(0);
+
+      useEffect(() => {
+        retrieveUser();
+      }, [countRef]);
+
+
+    const retrieveUser = () => {
+        axios
+          .get(`${process.env.REACT_APP_API_URL}/user/`, {
+            headers: {
+              headers,
+            },
+          })
+          .then((response) => {
+            setUser({
+              
+            });
+            console.log(user);
+          })
+          .catch((e) => {
+            console.error(e);
+          });
+      };
+
+    const updateUser = () => {
+        let data = {
+          // fill with use
+
+
+        };
+        axios
+          .put(`${baseURL}/menu/${id}/`, data, {
+            headers: {
+              headers,
+            },
+          })
+          .then((response) => {
+            setUser({
+                // fill with data
+            });
+            setSubmitted(true);
+            console.log(response.data);
+          })
+          .catch((e) => {
+            console.error(e);
+          });
+      };
+
+
+
+
+
+
+
+to do
+
+    1. styling
+        1. profile
+            - background color
+            - title (username) size
+            - link cards
+                - is link?
+
+            - formatted dates
+                - https://date-fns.org/
+            - better font
+            - gradient backgrounds
+                - https://codepen.io/pizza3/pen/JvKbBd
+
+        2. login/register 
+             - better messages
+             - what for default color?
+    
+
+
+    2. home
+        1. search!?!
+
+
+        2. 
+
