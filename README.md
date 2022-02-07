@@ -22,6 +22,7 @@ The app follows a standard authorization shape, with a Root Component that provi
 ### Routes
 
 - /
+
 Landing page
 
 - /login/
